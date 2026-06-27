@@ -141,6 +141,16 @@ rss:
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
 
+    - id: "github-trending"
+      name: "GitHub Trending (Python)"
+      url: "https://mshiban.github.io/GitHubTrendingRSS/github-trending-python-weekly.xml"
+      max_age_days: 3               # GitHub trending 更新慢，放宽到 3 天
+
+    - id: "juejin-ai"
+      name: "掘金 AI"
+      url: "https://rsshub.app/juejin/category/ai"
+      max_age_days: 2
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
@@ -153,7 +163,7 @@ rss:
 # 4. 报告模式
 # ===============================================================
 report:
-  mode: "current"                     # 报告模式（开启 schedule 后作为默认值，会被 timeline 时段覆盖）
+  mode: "incremental"                 # 报告模式（开启 schedule 后作为默认值，会被 timeline 时段覆盖）
                                       # daily = 当日汇总，按时推送当天所有匹配新闻（会包含之前推过的）
                                       # current = 当前榜单，按时推送当前在榜的匹配新闻（持续在榜的每次都出现）
                                       # incremental = 增量监控，只推送新增内容，零重复（没有新增时不推送）
